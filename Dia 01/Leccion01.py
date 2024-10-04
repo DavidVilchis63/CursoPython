@@ -9,3 +9,9 @@ print(555);
 
 print("Hola" + " " + "Mundo")
 print("Hola" + " " + "Mundo\n Hola Mundo")
+
+
+# Funcion input
+
+input("Dime tu nombre: ")
+input("Dime tu apellido: ")
