@@ -25,3 +25,7 @@ print(f"{x} elevado a {2} es igual a {x**2}")
     # Raiz cuadrada
 
 print(f"La raiz cuadrada de {x} es {x**0.5}")
+
+    # Redondeo
+
+print(round(90/7,2))
