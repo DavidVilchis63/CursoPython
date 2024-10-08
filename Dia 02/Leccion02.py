@@ -35,3 +35,18 @@ edad02 =  input("Coloca tu edad: ")
 print(type(edad02)) # De string a int para poder usar dato
 edad02 = int(edad02)
 print(type(edad02))
+
+# Formato para cadenas
+    # Format
+
+x = 5
+y = 6
+
+print("La suma de {} y {} es igual a {}".format(x,y,x+y))
+
+    #Cadenas literales
+
+color = "Rojo"
+matricula = 56271
+
+print(f"El auto es {color} y su matricula es {matricula}")
