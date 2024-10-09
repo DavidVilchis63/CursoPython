@@ -1,9 +1,8 @@
-"""
 # Propiedades de strings
 
-poema = "Mil pequeños peces blancos
+poema = """Mil pequeños peces blancos
  como si hirviera 
- el color del agua"
+ el color del agua"""
 
 print("agua" in poema) #Esta en texto
 print("agua" not in poema) # No esta entexto
@@ -40,7 +39,7 @@ print(lista3)
 lista4 = ["g","h","a","v","c"]
 lista4.reverse()
 print(lista4) 
-"""
+
 
 
 # Diccionarios
