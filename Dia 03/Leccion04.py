@@ -14,5 +14,6 @@ print(resultado3)
 # Extraer cadenas de texto
 
 texto2 = "ABCDEFGHIJKLMNO"
-fragmento = texto2[::-1] 
+fragmento = texto2[::-1] #El primerparametro, es el inicio, segundo es hasta donde lo va a extraer, y el ultimo sera si necesitas que se extraiga de 2 en 2 o culquier otra combinación
 print(fragmento)
+
