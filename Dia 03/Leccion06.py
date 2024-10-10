@@ -1,4 +1,4 @@
-# Tuples
+"""# Tuples
 
 tupla =(1,2,3,4)
 
@@ -29,3 +29,12 @@ print(mi_set)
 
 mi_set.clear()
 print(mi_set)
+"""
+
+# Valores booleanos
+
+var1 = True
+var2 = False
+
+print(type(var1))
+print(var2)
