@@ -38,3 +38,13 @@ else:
     print("Sin monedas")
 
 
+# Rangos
+
+for numero in range(5): #De 0 por defecto hasta 5 pero ese no lo toma
+    print(numero)
+
+for numero in range(1, 5): 
+    print(numero)   
+
+for numero in range(50, 100, 5):
+    print(numero)
