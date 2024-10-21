@@ -10,3 +10,16 @@ elif letra == "b":
 
 else:
     print("No entro a codigo")
+
+
+# Ciclo For
+
+lista = ["a", "b", "c"]
+
+for letra in lista:
+    print("Letra: " + letra)
+
+palabra = "Python"
+
+for letra in palabra:
+    print(letra)
