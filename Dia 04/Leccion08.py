@@ -48,3 +48,11 @@ for numero in range(1, 5):
 
 for numero in range(50, 100, 5):
     print(numero)
+
+
+# Enumerador
+
+lista = ["a", "b", "c"]
+
+for indice, item in enumerate(lista):
+    print(indice, item)
