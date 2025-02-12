@@ -26,7 +26,7 @@ while intentos > 0:
         print("Tu numero en menor,intenta de nuevo")
         intentos -= 1
 
-    elif (numeroJugador == numeroRandom):
+    else:
         print("Acertaste el numero")
         break;
 
