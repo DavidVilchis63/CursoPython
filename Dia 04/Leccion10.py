@@ -23,3 +23,11 @@ print(aleatorio03)
 numeros = list(range(5,50,5))
 shuffle(numeros)
 print(numeros)
+
+# Comprension de listas
+
+palabra = "python";
+lista = [letra for letra in palabra];
+lista2 = [n for n in range(0,21,2)];
+print(lista2);
+print(lista);
