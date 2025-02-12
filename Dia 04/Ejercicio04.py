@@ -31,4 +31,4 @@ while intentos > 0:
         break;
 
 if intentos == 0:
-    print("Sin intentos, perdiste")
+    print(f"Sin intentos, perdiste el numero era: {numeroRandom}")
