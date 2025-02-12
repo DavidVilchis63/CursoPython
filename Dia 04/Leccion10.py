@@ -29,5 +29,5 @@ print(numeros)
 palabra = "python";
 lista = [letra for letra in palabra];
 lista2 = [n for n in range(0,21,2)];
-print(lista2);
 print(lista);
+print(lista2);
