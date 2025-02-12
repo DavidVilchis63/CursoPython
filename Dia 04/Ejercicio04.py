@@ -7,7 +7,7 @@ nombre = input()
 print (f"Hola {nombre}, he pensado un numero del 1 al 100, tienes 8 intentos para adivinar ese numero")
 
 numeroRandom = randint(1,100);
-print(numeroRandom)
+#print(numeroRandom)
 
 intentos = 8
 
