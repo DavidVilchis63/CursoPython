@@ -12,6 +12,9 @@ def dobleCero(*args):
         if args[i] == 0 and args[i+1] == 0:
             return True
         
+        else:
+            contador += 1
+        
     return False
     
     
