@@ -65,3 +65,4 @@ def chequearLetra(letraELegida, palabraOculta, vidas, coincidencias):
         fin = ganar(palabraOculta)
 
     return fin, vidas, coincidencias
+
