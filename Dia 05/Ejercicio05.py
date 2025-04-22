@@ -6,7 +6,7 @@
 #Selección de palabra al azar
 from random import *
 
-wordList = ["python", "ejemplo", "programacion", "ahorcado","cinco"]
+wordList = ["salado", "ejemplo", "programacion", "ahorcado","cinco"]
 
 def elegirPalabra(listaPalabras):
     palabraElegida = choice(listaPalabras)
@@ -29,7 +29,7 @@ def pedirLetra():
     abecedario = "abcdefghijklmnopqrstuvwxyz"
 
     while not esValida:
-        letra_elegida = input("Introduce una letra: ").lower()
+        letraElegida = input("Introduce una letra: ").lower()
         if len(letraElegida) == 1 and letraElegida in abecedario:
             esValida = True
         else:
@@ -91,6 +91,6 @@ while not finJuego:
 
     letra = pedirLetra()
 
-    terminado, intentos, aciertos = chequearLetra(letra, palabra, intentosRestantes, aciertos)
+    terminado, intentosRestantes, aciertos = chequearLetra(letra, palabra, intentosRestantes, aciertos)
 
     finJuego = terminado
