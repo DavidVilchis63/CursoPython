@@ -7,13 +7,24 @@
 from random import *
 
 wordList = ["python", "ejemplo", "programacion", "ahorcado","cinco"]
-randomWord = choice(wordList)
 
-print(randomWord) # borrar al final
+def elegirPalabra(listaPalabras):
+    palabraElegida = choice(listaPalabras)
+    letrasUnicas = len(set(palabraElegida))
+    return palabraElegida, letrasUnicas
 
 #Inicialización de variables
 
 intentosRestantes = 6
+letrasCorrectas = []
+letrasIncorrectas = []
+finJuego = False
 
 palabraOculta = "_" * len(randomWord)
 print(palabraOculta) 
+
+#Funciones para el juego
+
+def pedirLetra():
+    letraElegida = ""
+    esValida = False
