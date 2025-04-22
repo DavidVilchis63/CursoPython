@@ -20,9 +20,6 @@ letrasCorrectas = []
 letrasIncorrectas = []
 finJuego = False
 
-palabraOculta = "_" * len(randomWord)
-print(palabraOculta) 
-
 #Funciones para el juego
 
 def pedirLetra():
