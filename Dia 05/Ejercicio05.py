@@ -28,3 +28,13 @@ print(palabraOculta)
 def pedirLetra():
     letraElegida = ""
     esValida = False
+    abecedario = "abcdefghijklmnopqrstuvwxyz"
+
+    while not esValida:
+        letra_elegida = input("Introduce una letra: ").lower()
+        if len(letraElegida) == 1 and letraElegida in abecedario:
+            esValida = True
+        else:
+            print("Introduce una letra válida")
+    
+    return letraElegida
