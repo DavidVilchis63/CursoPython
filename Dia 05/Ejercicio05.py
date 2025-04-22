@@ -35,3 +35,33 @@ def pedirLetra():
             print("Introduce una letra válida")
     
     return letraElegida
+
+def mostrarTablero(palabraElegida):
+
+    listaOculta = []
+
+    for l in palabraElegida:
+        if l in letrasCorrectas:
+            listaOculta.append(l)
+        else:
+            listaOculta.append("_")
+
+    print(" ".join(listaOculta))
+
+def chequearLetra(letraELegida, palabraOculta, vidas, coincidencias):
+
+    fin = False
+
+    if letraELegida in palabraOculta:
+        letrasCorrectas.append(letraELegida)
+        coincidencias += 1
+    else:
+        letrasIncorrectas.append(letraELegida)
+        vidas -= 1
+
+    if vidas == 0:
+        fin = perder()
+    elif coincidencias == cantidadLetras:
+        fin = ganar(palabraOculta)
+
+    return fin, vidas, coincidencias
