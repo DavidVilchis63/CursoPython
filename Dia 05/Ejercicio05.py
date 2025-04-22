@@ -53,7 +53,7 @@ def chequearLetra(letraELegida, palabraOculta, vidas, coincidencias):
 
     fin = False
 
-    if letraELegida in palabraOculta:
+    if letraELegida in palabraOculta and letraELegida not in letrasCorrectas:
         letrasCorrectas.append(letraELegida)
         coincidencias += 1
     else:
