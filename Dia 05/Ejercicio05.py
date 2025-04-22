@@ -16,6 +16,7 @@ def elegirPalabra(listaPalabras):
 #Inicialización de variables
 
 intentosRestantes = 6
+aciertos = 0
 letrasCorrectas = []
 letrasIncorrectas = []
 finJuego = False
@@ -61,8 +62,35 @@ def chequearLetra(letraELegida, palabraOculta, vidas, coincidencias):
 
     if vidas == 0:
         fin = perder()
-    elif coincidencias == cantidadLetras:
+    elif coincidencias == letrasUnicas:
         fin = ganar(palabraOculta)
 
     return fin, vidas, coincidencias
 
+def perder():
+    print("Has perdido")
+    print("La palabra era: ", palabra)
+    return True
+
+def ganar(palabraDescubierta):
+    mostrarTablero(palabraDescubierta)
+    print("Has ganado")
+    print("La palabra era: ", palabraDescubierta)
+    return True
+
+#Inicio del juego
+palabra, letrasUnicas = elegirPalabra(wordList)
+
+while not finJuego:
+    print("\n" + "*" * 20 + "\n")
+    mostrarTablero(palabra)
+    print("\n")
+    print("Letras incorrectas: ", letrasIncorrectas)
+    print(f"Vidas: {intentosRestantes}")
+    print("\n" + "*" * 20 + "\n")
+
+    letra = pedirLetra()
+
+    terminado, intentos, aciertos = chequearLetra(letra, palabra, intentosRestantes, aciertos)
+
+    finJuego = terminado
