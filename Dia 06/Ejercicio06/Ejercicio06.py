@@ -19,3 +19,31 @@ print("Cantidad de recetas: ", cantidadRecetas)
 #for archivo in conteoRecetas:
 #    print(archivo)
 
+#Creacion de menu de opciones
+
+def menu():
+    print("Elege una de las siguientes opciones: ")
+    print("1. Leer receta \n2. Crear receta \n3. Crear categoria \n4. Eliminar receta \n5. Eliminar categoria\n6. Salir")
+
+menu()
+opcion = int(input("¿Qué deseas hacer? "))
+
+while opcion != 6:
+    if opcion == 1:
+        print("Leer receta")
+    elif opcion == 2:
+        print("Crear receta")
+    elif opcion == 3:
+        print("Crear categoria")
+    elif opcion == 4:
+        print("Eliminar receta")
+    elif opcion == 5:
+        print("Eliminar categoria")
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+
+    opcion = int(input("¿Qué deseas hacer? "))
+
+print("Gracias por usar el Admin de Recetas. ¡Hasta luego!")
+
+
