@@ -2,6 +2,7 @@
 
 #Modulos usados
 from pathlib import Path
+import os
 
 #Bienvenida al programa
 
@@ -18,6 +19,14 @@ print("Cantidad de recetas: ", cantidadRecetas)
 
 #for archivo in conteoRecetas:
 #    print(archivo)
+
+#Creacion de funciones
+
+#Limpiar pantalla
+def limpiarPantalla():
+    os.system("cls")
+
+
 
 #Creacion de menu de opciones
 
@@ -42,6 +51,9 @@ while opcion != 6:
     else:
         print("Opción no válida. Intenta de nuevo.")
 
+    limpiarPantalla()
+    print("Opción no válida. Intenta de nuevo.")
+    menu()
     opcion = int(input("¿Qué deseas hacer? "))
 
 print("Gracias por usar el Admin de Recetas. ¡Hasta luego!")
