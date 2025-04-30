@@ -12,7 +12,34 @@ def mostrasCategorias():
         if categoria.is_dir():
             categorias.append(categoria.name)
     print("Categorias:")
-    for categoria in categorias:
-        print(f"📁 {categoria}")
+    n = 1
+    for categoria in categorias:        
+        print(f"📁 {n}.{categoria}")
+        n +=1 
 
-mostrasCategorias()
+    seleccion = int(input("Elige el número de la categoría: "))-1
+    return categorias[seleccion] 
+
+def mostrarRecetas(seleccion):
+    rutaNueva = Path(ruta, seleccion)
+    recetas = []
+    for receta in rutaNueva.iterdir():
+        if receta.is_file():
+            recetas.append(receta.name)
+    print(f"Recetas de {seleccion}")
+    n = 1
+    for receta in recetas:        
+        print(f"📁 {n}.{receta}")
+        n +=1 
+    print(rutaNueva)
+
+caele = mostrasCategorias()
+mostrarRecetas(caele)
+
+
+""" conteoRecetas = list(ruta.rglob("*.txt"))    #Contar los archivos .txt en la carpeta para eso sirve glob y rglob para archivos subyacentes
+cantidadRecetas = len(conteoRecetas)    #Contar los archivos .txt en la carpeta para eso sirve glob
+print("Cantidad de recetas: ", cantidadRecetas) """
+
+#for archivo in conteoRecetas:
+#    print(archivo)

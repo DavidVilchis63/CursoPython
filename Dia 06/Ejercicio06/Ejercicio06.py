@@ -26,7 +26,7 @@ print("Cantidad de recetas: ", cantidadRecetas)
 def limpiarPantalla():
     os.system("cls")
 
-    #Mostrar categoria
+#Mostrar categoria
 
 def mostrasCategorias():
     categorias = []
@@ -42,6 +42,19 @@ def mostrasCategorias():
     seleccion = int(input("Elige el número de la categoría: "))-1
     return categorias[seleccion] 
 
+#Mostrar recetas, depende de la seleccion de la categoria
+
+def mostrarRecetas(seleccion):
+    rutaNueva = Path(ruta, seleccion)
+    recetas = []
+    for receta in rutaNueva.iterdir():
+        if receta.is_file():
+            recetas.append(receta.name)
+    print(f"Recetas de {seleccion}")
+    n = 1
+    for receta in recetas:        
+        print(f"📁 {n}.{receta}")
+        n +=1 
 
 
 #Creacion de menu de opciones
@@ -56,7 +69,8 @@ opcion = int(input("¿Qué deseas hacer? "))
 while opcion != 6:
     if opcion == 1:
         print("Leer receta")    
-        categoria_elegida = mostrasCategorias()
+        categoriaElegida = mostrasCategorias()
+        mostrarRecetas(categoriaElegida)
     elif opcion == 2:
         print("Crear receta")
     elif opcion == 3:
