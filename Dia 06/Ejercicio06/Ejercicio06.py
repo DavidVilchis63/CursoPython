@@ -26,6 +26,18 @@ print("Cantidad de recetas: ", cantidadRecetas)
 def limpiarPantalla():
     os.system("cls")
 
+    #Mostrar categoria
+
+def mostrasCategorias():
+    categorias = []
+    for categoria in ruta.iterdir():
+        if categoria.is_dir():
+            categorias.append(categoria.name)
+    print("Categorias:")
+    n = 1
+    for categoria in categorias:        
+        print(f"📁 {n}.{categoria}")
+        n +=1
 
 
 #Creacion de menu de opciones
@@ -40,6 +52,8 @@ opcion = int(input("¿Qué deseas hacer? "))
 while opcion != 6:
     if opcion == 1:
         print("Leer receta")
+        mostrasCategorias()
+        seleccionCategoria = int(input("Que categoria escogeras? "))
     elif opcion == 2:
         print("Crear receta")
     elif opcion == 3:
@@ -50,9 +64,10 @@ while opcion != 6:
         print("Eliminar categoria")
     else:
         print("Opción no válida. Intenta de nuevo.")
+        limpiarPantalla()
 
-    limpiarPantalla()
-    print("Opción no válida. Intenta de nuevo.")
+    
+    print("Salio de ciclo While")
     menu()
     opcion = int(input("¿Qué deseas hacer? "))
 
