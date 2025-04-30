@@ -22,6 +22,18 @@ print("Cantidad de recetas: ", cantidadRecetas)
 
 #Creacion de funciones
 
+#Funcion regresar a menu
+
+def regresarMenu():
+
+    salir = int(input("Presiona 1 para regresar al menu: "))
+    if salir == 1:
+        limpiarPantalla()
+        menu()
+    else:
+        print("No valido")
+
+
 #Limpiar pantalla
 def limpiarPantalla():
     os.system("cls")
@@ -92,10 +104,8 @@ while opcion != 6:
     else:
         print("Opción no válida. Intenta de nuevo.")
         limpiarPantalla()
-
-    
-    print("Salio de ciclo While")
-    menu()
+   
+    regresarMenu()
     opcion = int(input("¿Qué deseas hacer? "))
 
 print("Gracias por usar el Admin de Recetas. ¡Hasta luego!")
