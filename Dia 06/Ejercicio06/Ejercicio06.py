@@ -37,7 +37,11 @@ def mostrasCategorias():
     n = 1
     for categoria in categorias:        
         print(f"📁 {n}.{categoria}")
-        n +=1
+        n +=1 
+
+    seleccion = int(input("Elige el número de la categoría: "))-1
+    return categorias[seleccion] 
+
 
 
 #Creacion de menu de opciones
@@ -51,9 +55,8 @@ opcion = int(input("¿Qué deseas hacer? "))
 
 while opcion != 6:
     if opcion == 1:
-        print("Leer receta")
-        mostrasCategorias()
-        seleccionCategoria = int(input("Que categoria escogeras? "))
+        print("Leer receta")    
+        categoria_elegida = mostrasCategorias()
     elif opcion == 2:
         print("Crear receta")
     elif opcion == 3:
