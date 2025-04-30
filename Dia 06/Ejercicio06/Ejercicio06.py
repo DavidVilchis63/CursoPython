@@ -95,6 +95,7 @@ while opcion != 6:
         leerReceta(categoriaElegida, RecetaElegida)
     elif opcion == 2:
         print("Crear receta")
+        categoriaElegida = mostrasCategorias()
     elif opcion == 3:
         print("Crear categoria")
     elif opcion == 4:
