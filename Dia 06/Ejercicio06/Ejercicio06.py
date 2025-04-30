@@ -56,6 +56,15 @@ def mostrarRecetas(seleccion):
         print(f"📁 {n}.{receta}")
         n +=1 
 
+    seleccionReceta = int(input("Elige el número de la receta: "))-1
+    return recetas[seleccionReceta] 
+
+#Mostrar contenido de txt
+
+def leerReceta (seleccion, seleccionReceta):
+    rutaFinal = Path(ruta, seleccion,seleccionReceta)
+    print(rutaFinal.read_text())
+
 
 #Creacion de menu de opciones
 
@@ -70,7 +79,8 @@ while opcion != 6:
     if opcion == 1:
         print("Leer receta")    
         categoriaElegida = mostrasCategorias()
-        mostrarRecetas(categoriaElegida)
+        RecetaElegida = mostrarRecetas(categoriaElegida)
+        leerReceta(categoriaElegida, RecetaElegida)
     elif opcion == 2:
         print("Crear receta")
     elif opcion == 3:

@@ -31,10 +31,20 @@ def mostrarRecetas(seleccion):
     for receta in recetas:        
         print(f"📁 {n}.{receta}")
         n +=1 
-    print(rutaNueva)
+    seleccionReceta = int(input("Elige el número de la receta: "))-1
+    return recetas[seleccionReceta]
 
-caele = mostrasCategorias()
-mostrarRecetas(caele)
+def leerReceta (seleccion, seleccionReceta):
+    rutaFinal = Path(ruta, seleccion,seleccionReceta)
+    print(rutaFinal.read_text())
+
+seleccion = mostrasCategorias()
+seleccion02 = mostrarRecetas(seleccion)
+
+leerReceta(seleccion, seleccion02)
+
+
+
 
 
 """ conteoRecetas = list(ruta.rglob("*.txt"))    #Contar los archivos .txt en la carpeta para eso sirve glob y rglob para archivos subyacentes
