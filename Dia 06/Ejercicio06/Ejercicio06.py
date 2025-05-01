@@ -101,6 +101,14 @@ def crearCategoria():
     nuevaCategoria = input("Nombre de la nueva categoria: ")
     (ruta / nuevaCategoria).mkdir()
 
+#Eliminar categoria
+
+def eliminarCategoreia(categoriaElegida):
+
+    categoriaEliminar = Path(ruta, categoriaElegida)
+    categoriaEliminar.rmdir()
+    print(f"Carpeta {categoriaElegida} eliminada")
+
 
 #Creacion de menu de opciones
 
@@ -131,6 +139,8 @@ while opcion != 6:
         eliminarReceta(categoriaElegida, recetaElegida)
     elif opcion == 5:
         print("Eliminar categoria")
+        categoriaElegida = mostrasCategorias()
+        eliminarCategoreia(categoriaElegida)
     else:
         print("Opción no válida. Intenta de nuevo.")
         limpiarPantalla()
