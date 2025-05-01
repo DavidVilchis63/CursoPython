@@ -87,6 +87,14 @@ def crearReceta(seleccion):
     nuevaReceta.write(contenido)
     nuevaReceta.close()
 
+#Eliminar receta
+
+def eliminarReceta(categoriaElegida, recetaElegida):
+
+    archivoEliminar = Path(ruta, categoriaElegida, recetaElegida)
+    archivoEliminar.unlink()
+    print(f"Receta {recetaElegida} eliminada")
+
 #Crear categoria
 
 def crearCategoria():
@@ -107,8 +115,8 @@ while opcion != 6:
     if opcion == 1:
         print("Leer receta")    
         categoriaElegida = mostrasCategorias()
-        RecetaElegida = mostrarRecetas(categoriaElegida)
-        leerReceta(categoriaElegida, RecetaElegida)
+        recetaElegida = mostrarRecetas(categoriaElegida)
+        leerReceta(categoriaElegida, recetaElegida)
     elif opcion == 2:
         print("Crear receta")
         categoriaElegida = mostrasCategorias()
@@ -118,6 +126,9 @@ while opcion != 6:
         crearCategoria()
     elif opcion == 4:
         print("Eliminar receta")
+        categoriaElegida = mostrasCategorias()
+        recetaElegida = mostrarRecetas(categoriaElegida)
+        eliminarReceta(categoriaElegida, recetaElegida)
     elif opcion == 5:
         print("Eliminar categoria")
     else:
