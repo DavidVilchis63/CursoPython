@@ -77,6 +77,15 @@ def leerReceta (seleccion, seleccionReceta):
     rutaFinal = Path(ruta, seleccion,seleccionReceta)
     print(rutaFinal.read_text())
 
+#Crear receta
+
+def crearReceta(seleccion):
+    nombre = input("Nombre de la receta: ")
+    contenido = input("Escriba el contenido de la receta: ")
+    rutaNueva = Path(ruta,seleccion)
+    nuevaReceta = open(rutaNueva / (nombre+".txt"), "w")
+    nuevaReceta.write(contenido)
+
 
 #Creacion de menu de opciones
 
@@ -96,6 +105,7 @@ while opcion != 6:
     elif opcion == 2:
         print("Crear receta")
         categoriaElegida = mostrasCategorias()
+        crearReceta(categoriaElegida)
     elif opcion == 3:
         print("Crear categoria")
     elif opcion == 4:

@@ -38,10 +38,16 @@ def leerReceta (seleccion, seleccionReceta):
     rutaFinal = Path(ruta, seleccion,seleccionReceta)
     print(rutaFinal.read_text())
 
-seleccion = mostrasCategorias()
-seleccion02 = mostrarRecetas(seleccion)
+def crearReceta(seleccion):
+    nombre = input("Nombre de la receta: ")
+    contenido = input("Escriba el contenido de la receta: ")
+    rutaNueva = Path(ruta,seleccion)
+    nuevaReceta = open(rutaNueva / (nombre+".txt"), "w")
+    nuevaReceta.write(contenido)
 
-leerReceta(seleccion, seleccion02)
+seleccion = mostrasCategorias()
+nuevaReceta = crearReceta(seleccion)
+
 
 
 
