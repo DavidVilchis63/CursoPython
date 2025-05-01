@@ -85,6 +85,13 @@ def crearReceta(seleccion):
     rutaNueva = Path(ruta,seleccion)
     nuevaReceta = open(rutaNueva / (nombre+".txt"), "w")
     nuevaReceta.write(contenido)
+    nuevaReceta.close()
+
+#Crear categoria
+
+def crearCategoria():
+    nuevaCategoria = input("Nombre de la nueva categoria: ")
+    (ruta / nuevaCategoria).mkdir()
 
 
 #Creacion de menu de opciones
@@ -108,6 +115,7 @@ while opcion != 6:
         crearReceta(categoriaElegida)
     elif opcion == 3:
         print("Crear categoria")
+        crearCategoria()
     elif opcion == 4:
         print("Eliminar receta")
     elif opcion == 5:
