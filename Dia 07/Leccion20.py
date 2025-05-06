@@ -2,14 +2,20 @@
 
 #Clases
 class Pajaro:
-    pass
+    
+    #Atributos de instancia
+    def __init__(self, color, especie):
+        self.color = color
+        self.especie = especie
 
 
 #Instancias
-miPajaro = Pajaro()
-otroPajaro = Pajaro()
+miPajaro = Pajaro("verde", "cotorro")
+otroPajaro = Pajaro("azul", "guacamaya")
 
 
-print(miPajaro)
-print(otroPajaro)
+print(miPajaro.color)
+print(otroPajaro.color)
+print(miPajaro.especie)
+print(otroPajaro.especie)
 print(type(miPajaro))
