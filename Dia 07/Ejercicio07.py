@@ -32,7 +32,9 @@ class Cliente(Persona):
             self.balance = self.balance - saldoRetirar
             print(f"Retiro exitoso, su nuevo saldo es {self.balance}")
         else:
-            print(f"No es posible retirar ya uqe ingreso una cantidad mayor a su saldo, su saldo es: {self.balance}")
+            print(f"No es posible retirar ya que ingreso una cantidad mayor a su saldo, su saldo es: {self.balance}")
+
+        return 
 
 def crearCliente():
     
@@ -42,6 +44,33 @@ def crearCliente():
     saldo = int(input("Ingrese saldo inicial de cliente: "))   
 
     cliente01 = Cliente(nombre, apellido, cuenta, saldo)
-    return print(cliente01)
+    return cliente01
 
-crearCliente()
+def incioPrograma():
+    
+    nuevoCliente = crearCliente()
+    
+    while True:
+        print("\nMenu de opciones")
+        print("Seleccione la opcion que quiere realizar \n1)Ver informacion \n2)Depositar\n3)Retirar\n4)Salir")
+        opcion = int(input("---> "))
+
+        if opcion == 1:
+            print(nuevoCliente)
+
+        elif opcion == 2:
+            nuevoCliente.depositar()
+        
+        elif opcion == 3:
+            nuevoCliente.retirar()
+
+        elif opcion ==4:
+            print("Saliendo")
+            break
+        
+        else:
+            print("Opcion no valida intente de nuevo")
+    
+    
+
+incioPrograma()
