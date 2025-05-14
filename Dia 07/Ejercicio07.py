@@ -34,9 +34,14 @@ class Cliente(Persona):
         else:
             print(f"No es posible retirar ya uqe ingreso una cantidad mayor a su saldo, su saldo es: {self.balance}")
 
+def crearCliente():
+    
+    nombre = input("Ingrese nombre de cliente: ") 
+    apellido = input("Ingrese apellido de cliente: ") 
+    cuenta = int(input("Ingrese No. de cuenta de cliente: "))
+    saldo = int(input("Ingrese saldo inicial de cliente: "))   
 
-cliente01 = Cliente("David", "Vilchis", 5563187248, 20000)
+    cliente01 = Cliente(nombre, apellido, cuenta, saldo)
+    return print(cliente01)
 
-print(cliente01)
-cliente01.depositar()
-cliente01.retirar()
+crearCliente()
