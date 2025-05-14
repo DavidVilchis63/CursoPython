@@ -16,7 +16,7 @@ class Cliente(Persona):
 
     # Metodo para print()
     def __str__(self):
-        return f"Hola {self.nombre + " " +self.apellido} tu No. de cuenta es: {self.cuenta} con un saldo de: {self.balance}"
+        return f"Hola {self.nombre + " " +self.apellido} \nSaldo de cuenta {self.cuenta}: ${self.balance}"
     
     # Metodo depositar
     def depositar(self):        
