@@ -10,8 +10,11 @@ def suma():
 try:
     suma()
 
-except:
-    print("Error")
+except TypeError:
+    print("Error, diferentes tipos de datos")
+
+except ValueError:
+    print("Error, ingreso un dato que no es un numero")
 
 else:
     print("Programa ejecutado")
