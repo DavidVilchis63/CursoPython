@@ -3,6 +3,7 @@
 """
 
 import time
+import timeit
 
 def pruebaFor(numero):
     lista = []
@@ -20,11 +21,11 @@ def pruebaWhile(numero):
 
 
 inicio = time.time()
-pruebaFor(1000000)
+pruebaFor(100)
 final = time.time()
 print(final - inicio)
 
 inicio = time.time()
-pruebaWhile(1000000)
+pruebaWhile(100)
 final = time.time()
 print(final - inicio)
