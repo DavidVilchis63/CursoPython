@@ -40,3 +40,27 @@ def asignarTurno(area):
             yield f"C - {turnoC}"
             turnoC += 1
 
+#Sistema de turnos
+
+def sistemaTurnos():
+
+    generadores = {"a": asignarTurno("a"), "b":asignarTurno("b"), "c":asignarTurno("c")}
+
+    while True:
+        print("\nSeleccione el área para tomar turno:")
+        print("a) Perfumería")
+        print("b) Farmacia")
+        print("c) Cosméticos")
+        print("d) Salir")
+
+        opcion = input("Ingrese departamento: ").lower()
+
+        if opcion == "d":
+            print("Saliendo de sistema...")
+            break
+        elif opcion in generadores:
+            turno = next(generadores[opcion])
+            print(turno)
+        else:
+            print("Opcion no valida")
+        
