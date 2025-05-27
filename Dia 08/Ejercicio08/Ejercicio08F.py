@@ -18,4 +18,25 @@ def decorarTurno(funcion):
 #Codigo para asignar turnos
 
 def asignarTurno(area):
-    pass
+
+    turnoA = 1
+    turnoB = 1
+    turnoC = 1
+    
+    while True:       
+
+        #Perfumeria        
+        if area == "a":            
+            yield f"P - {turnoA}"
+            turnoA += 1
+        
+        #Farmacia        
+        elif area == "b":            
+            yield f"F - {turnoB}"
+            turnoB += 1
+
+        #Cosmeticos
+        elif area == "c":           
+            yield f"C - {turnoC}"
+            turnoC += 1
+
