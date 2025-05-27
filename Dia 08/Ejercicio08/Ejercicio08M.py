@@ -7,8 +7,7 @@ from Ejercicio08F import asignarTurno
 from Ejercicio08F import sistemaTurnos
 
 
-
-decorarTurno(sistemaTurnos())
+sistemaTurnos()
 
 
 

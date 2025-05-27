@@ -7,13 +7,16 @@
 
 # Decoradores para el ejercicio de turnos en una farmacia
 def decorarTurno(funcion):
-
-    def otraFuncion(turno):
+    
+    def funcionDecorada(turno):
         print("Turno asignado")
         funcion(turno)
         print("Aguarde y será atendido")
-    
-    return otraFuncion
+    return funcionDecorada
+
+@decorarTurno
+def mostrarTurno(turno):
+    print(turno)
 
 #Codigo para asignar turnos
 
@@ -60,7 +63,7 @@ def sistemaTurnos():
             break
         elif opcion in generadores:
             turno = next(generadores[opcion])
-            print(turno)
+            mostrarTurno(turno)
         else:
             print("Opcion no valida")
         
