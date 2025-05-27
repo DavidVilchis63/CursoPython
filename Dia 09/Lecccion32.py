@@ -2,7 +2,7 @@
     Modulo collections
 """
 
-from collections import Counter, defaultdict
+from collections import Counter, defaultdict, namedtuple
 
 # Counter cuenta los elementos de una tupla, palabra, o frases
 
@@ -23,3 +23,8 @@ dic["Uno"] = "verde"
 print(dic["Dos"])                           #Al no tener el valor "Dos", defaultdict creo el objeto y añade la descripcion deseada en este caso "Lambda"
 print(dic)
 
+# Namedtuple
+
+Persona = namedtuple("Persona", ["nombre", "altura", "peso"])
+persona1 = Persona("Brisa", 1.50, 48 )
+print(persona1.altura)
