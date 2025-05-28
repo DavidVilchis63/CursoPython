@@ -54,6 +54,12 @@ while seEjecuta:
     #Modifica ubicacion de jugador
     jugadorX += jugadorXCambio
 
+    #Mantener dentro de bordes
+    if jugadorX <= 0:
+        jugadorX = 0
+    elif jugadorX >= 736:
+        jugadorX = 736
+
     #Jugador
     jugador(jugadorX, JugadorY)
 
