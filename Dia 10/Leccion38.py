@@ -15,6 +15,7 @@ pantalla = pygame.display.set_mode((800,600))
 pygame.display.set_caption("Invasion Espacial")
 icono = pygame.image.load("ovni.png")
 pygame.display.set_icon(icono)
+fondo = pygame.image.load("Fondo.jpg")
 
 #Crear jugador
 imgJugador = pygame.image.load("cohete.png")
@@ -29,7 +30,7 @@ def jugador(x, y):
 imgEnemigo = pygame.image.load("enemigo.png")
 enemigoX = random.randint(0, 736)
 enemigoY = random.randint(0, 200)
-enemigoXCambio = 0.3
+enemigoXCambio = 0.5
 enemigoYCambio = 50
 
 def enemigo(x, y):
@@ -41,7 +42,9 @@ seEjecuta = True
 while seEjecuta:
 
     #Cambiar color de pantalla RGB
-    pantalla.fill((205,144,228))
+    #pantalla.fill((205,144,228))
+    #Cambiar fondo por imagen
+    pantalla.blit(fondo, (0,0))
 
     #Iterar eventos
     for evento in pygame.event.get():
@@ -53,9 +56,9 @@ while seEjecuta:
         #Controlar movimiento de objeto al presionar y soltarflechas
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_LEFT:
-                jugadorXCambio = -0.3
+                jugadorXCambio = -1
             if evento.key == pygame.K_RIGHT:
-                jugadorXCambio = 0.3
+                jugadorXCambio = 1
         
         if evento.type == pygame.KEYUP:
             if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
@@ -76,10 +79,10 @@ while seEjecuta:
 
     #Mantener dentro de bordes al enemigo
     if enemigoX <= 0:
-        enemigoXCambio = 0.3
+        enemigoXCambio = 0.5
         enemigoY += enemigoYCambio
     elif enemigoX >= 736:
-        enemigoXCambio = -0.3
+        enemigoXCambio = -0.5
         enemigoY += enemigoYCambio
 
     #Jugador
