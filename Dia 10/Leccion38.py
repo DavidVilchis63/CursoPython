@@ -28,8 +28,9 @@ def jugador(x, y):
 #Crear enemigo
 imgEnemigo = pygame.image.load("enemigo.png")
 enemigoX = random.randint(0, 736)
-enemigoY = random.randint(50, 200)
-enemigoXCambio = 0
+enemigoY = random.randint(0, 200)
+enemigoXCambio = 0.3
+enemigoYCambio = 50
 
 def enemigo(x, y):
     pantalla.blit(imgEnemigo, (x, y))
@@ -64,11 +65,22 @@ while seEjecuta:
     #Modifica ubicacion de jugador
     jugadorX += jugadorXCambio
 
-    #Mantener dentro de bordes
+    #Mantener dentro de bordes al jugador
     if jugadorX <= 0:
         jugadorX = 0
     elif jugadorX >= 736:
         jugadorX = 736
+
+    #Modifica ubicacion de enemigo
+    enemigoX += enemigoXCambio
+
+    #Mantener dentro de bordes al enemigo
+    if enemigoX <= 0:
+        enemigoXCambio = 0.3
+        enemigoY += enemigoYCambio
+    elif enemigoX >= 736:
+        enemigoXCambio = -0.3
+        enemigoY += enemigoYCambio
 
     #Jugador
     jugador(jugadorX, jugadorY)
