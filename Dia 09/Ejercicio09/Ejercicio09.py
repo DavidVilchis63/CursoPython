@@ -4,7 +4,7 @@
 """
 #import shutil
 
-#shutil.unpack_archive("ProyectoDia9", "EjercicioDia09" , "zip")
+#shutil.unpack_archive("ProyectoDia9.zip", "C:\\Users\\david\\Documents\\Python\\Dia 09\\Ejercicio09" , "zip")
 
 # Parte 1 usar os para iterar por todo el directorio
 
