@@ -32,10 +32,14 @@ while seEjecuta:
     #Cambiar color de pantalla RGB
     pantalla.fill((205,144,228))
 
+    #Iterar eventos
     for evento in pygame.event.get():
+
+        #Evento para cerrar programa
         if evento.type == pygame.QUIT:
             seEjecuta = False
 
+        #Controlar movimiento de objeto al presionar y soltarflechas
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_LEFT:
                 jugadorXCambio = -0.3
@@ -47,8 +51,10 @@ while seEjecuta:
                 jugadorXCambio = 0
 
 
-    #Jugador
+    #Modifica ubicacion de jugador
     jugadorX += jugadorXCambio
+
+    #Jugador
     jugador(jugadorX, JugadorY)
 
     #Actualiza pantalla
