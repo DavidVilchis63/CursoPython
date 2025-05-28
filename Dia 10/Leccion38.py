@@ -3,6 +3,7 @@
 """
 
 import pygame
+import random
 
 #Inicializar pygame
 pygame.init()
@@ -18,11 +19,20 @@ pygame.display.set_icon(icono)
 #Crear jugador
 imgJugador = pygame.image.load("cohete.png")
 jugadorX = 368
-JugadorY = 536
+jugadorY = 536
 jugadorXCambio = 0
 
 def jugador(x, y):
     pantalla.blit(imgJugador, (x, y))
+
+#Crear enemigo
+imgEnemigo = pygame.image.load("enemigo.png")
+enemigoX = random.randint(0, 736)
+enemigoY = random.randint(50, 200)
+enemigoXCambio = 0
+
+def enemigo(x, y):
+    pantalla.blit(imgEnemigo, (x, y))
 
 #Loop del juego
 seEjecuta = True
@@ -61,7 +71,8 @@ while seEjecuta:
         jugadorX = 736
 
     #Jugador
-    jugador(jugadorX, JugadorY)
+    jugador(jugadorX, jugadorY)
+    enemigo(enemigoX, enemigoY)
 
     #Actualiza pantalla
     pygame.display.update()
