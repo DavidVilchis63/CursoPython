@@ -22,3 +22,7 @@ while seEjecuta:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             seEjecuta = False
+
+    #Cambiar color de pantalla
+    pantalla.fill((205,144,228))
+    pygame.display.update()
