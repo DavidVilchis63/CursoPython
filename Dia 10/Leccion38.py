@@ -36,6 +36,20 @@ enemigoYCambio = 50
 def enemigo(x, y):
     pantalla.blit(imgEnemigo, (x, y))
 
+#Crear bala
+imgBala = pygame.image.load("bala.png")
+balaX = 0
+balaY = 536
+balaXCambio = 0
+balaYCambio = 1
+balaVisible = False
+
+def dispararBala(x, y):
+    global balaVisible
+    balaVisible = True
+    pantalla.blit(imgBala, (x + 16, y + 10))
+
+
 #Loop del juego
 seEjecuta = True
 
@@ -59,6 +73,11 @@ while seEjecuta:
                 jugadorXCambio = -1
             if evento.key == pygame.K_RIGHT:
                 jugadorXCambio = 1
+
+            #Se agrega codigo para bala
+            if evento.key == pygame.K_SPACE:
+                dispararBala(jugadorX, balaY)
+
         
         if evento.type == pygame.KEYUP:
             if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
@@ -84,6 +103,11 @@ while seEjecuta:
     elif enemigoX >= 736:
         enemigoXCambio = -0.5
         enemigoY += enemigoYCambio
+    
+    #Movimiento bala
+    if balaVisible:
+        dispararBala(jugadorX, balaY)
+        balaY -= balaYCambio
 
     #Jugador
     jugador(jugadorX, jugadorY)
