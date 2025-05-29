@@ -4,6 +4,7 @@
 
 import pygame
 import random
+import math
 
 #Inicializar pygame
 pygame.init()
@@ -49,6 +50,16 @@ def dispararBala(x, y):
     balaVisible = True
     pantalla.blit(imgBala, (x + 16, y + 10))
 
+#Funcion para detectar colisiones
+def colisionPositiva(x1, y1, x2, y2):
+    distancia = math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
+    if distancia < 27:
+        return True
+    else:
+        False
+
+#Variable para puntaje
+puntaje = 0
 
 #Loop del juego
 seEjecuta = True
@@ -114,6 +125,16 @@ while seEjecuta:
     if balaVisible:
         dispararBala(balaX, balaY)
         balaY -= balaYCambio
+
+    #Colision
+    colision = colisionPositiva(enemigoX, enemigoY, balaX, balaY)
+    if colision:
+        balaY = 500
+        balaVisible = False
+        puntaje += 1
+        print(puntaje)
+        enemigoX = random.randint(0, 736)
+        enemigoY = random.randint(0, 200)
 
     #Jugador
     jugador(jugadorX, jugadorY)
