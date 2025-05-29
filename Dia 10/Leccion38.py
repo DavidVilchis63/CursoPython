@@ -76,7 +76,9 @@ while seEjecuta:
 
             #Se agrega codigo para bala
             if evento.key == pygame.K_SPACE:
-                dispararBala(jugadorX, balaY)
+                if not balaVisible:
+                    balaX = jugadorX
+                    dispararBala(balaX, balaY)
 
         
         if evento.type == pygame.KEYUP:
@@ -105,8 +107,12 @@ while seEjecuta:
         enemigoY += enemigoYCambio
     
     #Movimiento bala
+    if balaY <= -64:
+        balaY = 500
+        balaVisible = False
+
     if balaVisible:
-        dispararBala(jugadorX, balaY)
+        dispararBala(balaX, balaY)
         balaY -= balaYCambio
 
     #Jugador
