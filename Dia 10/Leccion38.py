@@ -68,6 +68,13 @@ def colisionPositiva(x1, y1, x2, y2):
 
 #Variable para puntaje
 puntaje = 0
+fuente = pygame.font.Font("freesansbold.ttf", 32)
+textoX = 10
+textoY = 10
+
+def mostrarPuntaje(x,y):
+    texto = fuente.render(f"Puntaje: {puntaje}", True, (255,255,255))
+    pantalla.blit(texto, (x,y))
 
 #Loop del juego
 seEjecuta = True
@@ -132,7 +139,6 @@ while seEjecuta:
             balaY = 500
             balaVisible = False
             puntaje += 1
-            print(puntaje)
             enemigoX[e] = random.randint(0, 736)
             enemigoY[e] = random.randint(0, 200)
         
@@ -149,6 +155,9 @@ while seEjecuta:
 
     #Jugador
     jugador(jugadorX, jugadorY)
+
+    #Mostrar puntaje
+    mostrarPuntaje(textoX, textoY)
 
     #Actualiza pantalla
     pygame.display.update()
