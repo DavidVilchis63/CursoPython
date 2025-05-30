@@ -5,6 +5,7 @@
 import pygame
 import random
 import math
+import os
 
 #Inicializar pygame
 pygame.init()
@@ -12,14 +13,20 @@ pygame.init()
 #Crear pantalla
 pantalla = pygame.display.set_mode((800,600))
 
+#Cambio de ruta para imagenes y audios
+
+def rutaAnexos(nombre):
+    ruta = os.path.join("Dia 10", nombre)
+    return ruta
+
 #Titulo e icono 
 pygame.display.set_caption("Invasion Espacial")
-icono = pygame.image.load("ovni.png")
+icono = pygame.image.load(rutaAnexos("ovni.png"))
 pygame.display.set_icon(icono)
-fondo = pygame.image.load("Fondo.jpg")
+fondo = pygame.image.load(rutaAnexos("Fondo.jpg"))
 
 #Crear jugador
-imgJugador = pygame.image.load("cohete.png")
+imgJugador = pygame.image.load(rutaAnexos("cohete.png"))
 jugadorX = 368
 jugadorY = 536
 jugadorXCambio = 0
@@ -36,7 +43,7 @@ enemigoYCambio = []
 cantidadEnemigos = 8
 
 for e in range(cantidadEnemigos):
-    imgEnemigo.append(pygame.image.load("enemigo.png"))
+    imgEnemigo.append(pygame.image.load(rutaAnexos("enemigo.png")))
     enemigoX.append(random.randint(0, 736))
     enemigoY.append(random.randint(0, 200))
     enemigoXCambio.append(0.5)
@@ -46,7 +53,7 @@ def enemigo(x, y, ene):
     pantalla.blit(imgEnemigo[ene], (x, y))
 
 #Crear bala
-imgBala = pygame.image.load("bala.png")
+imgBala = pygame.image.load(rutaAnexos("bala.png"))
 balaX = 0
 balaY = 536
 balaXCambio = 0
