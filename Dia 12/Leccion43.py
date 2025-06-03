@@ -63,5 +63,41 @@ panelRecibo.pack()
 panelBotones = Frame(panelDerecha, bd=1, relief=FLAT, bg="burlywood")
 panelBotones.pack()
 
+#Lista de productos
+listaComidas = ["pollo", "cordero", "salmon", "merluza", "kebab", "pizza", "sushi", "sopa"]
+listaBebidas = ["agua", "soda", "cerveza", "vino", "tequila", "ron", "whisky", "jugo"]
+listaPostres = ["helado", "tarta", "fruta", "brownie", "flan", "tiramisu", "cheesecake", "mousse"]
+
+#Generar items comida
+variableComida = []
+contador = 0
+for comida in listaComidas:
+    variableComida.append("")
+    variableComida[contador] = IntVar()
+    comida = Checkbutton(panelComida, text = comida.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variableComida[contador])
+    comida.grid(row=contador, column=0, sticky=W)
+    contador += 1
+
+#Generar items bebidas
+variableBebida = []
+contador = 0
+for bebidas in listaBebidas:
+    variableBebida.append("")
+    variableBebida[contador] = IntVar()
+    bebidas = Checkbutton(panelComida, text = bebidas.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variableBebida[contador])
+    bebidas.grid(row=contador, column=1, sticky=W)
+    contador += 1
+
+#Generar items postres
+variablePostres = []
+contador = 0
+for postres in listaBebidas:
+    variablePostres.append("")
+    variablePostres[contador] = IntVar()
+    postres = Checkbutton(panelComida, text = postres.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variablePostres[contador])
+    postres.grid(row=contador, column=2, sticky=W)
+    contador += 1
+
+
 #Mantener ventana activa
 aplicacion.mainloop()
