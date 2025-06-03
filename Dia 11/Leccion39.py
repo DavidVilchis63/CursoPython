@@ -19,3 +19,11 @@ sopa = bs4.BeautifulSoup(resultado.text, "lxml")
 print(sopa.select("title"))
 print(len(sopa.select("p")))
 print(sopa.select("title")[0].getText())
+
+#Extraer toda una clase
+
+columnaLateral = sopa.select(".item-content")
+#print(columnaLateral)
+
+for p in columnaLateral:
+    print(p.getText())
