@@ -91,6 +91,8 @@ for comida in listaComidas:
     #Crear cuadro de entrada
     cuadrosComida.append("")
     textoComida.append("")
+    textoComida[contador] = StringVar()
+    textoComida[contador].set("0")
     cuadrosComida[contador] = Entry(panelComida,
                                     font=("Dosis", 16, "bold"),
                                     bd=1,
@@ -125,6 +127,8 @@ for bebidas in listaBebidas:
     #Crear cuadro de entrada
     cuadrosBebida.append("")
     textoBebida.append("")
+    textoBebida[contador] = StringVar()
+    textoBebida[contador].set("0")
     cuadrosBebida[contador] = Entry(panelBebidas,
                                     font=("Dosis", 16, "bold"),
                                     bd=1,
@@ -159,6 +163,8 @@ for postres in listaBebidas:
     #Crear cuadro de entrada
     cuadrosPostres.append("")
     textoPostres.append("")
+    textoPostres[contador] = StringVar()
+    textoPostres[contador].set("0")
     cuadrosPostres[contador] = Entry(panelPostres,
                                     font=("Dosis", 16, "bold"),
                                     bd=1,
