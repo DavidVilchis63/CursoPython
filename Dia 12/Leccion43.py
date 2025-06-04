@@ -70,32 +70,104 @@ listaPostres = ["helado", "tarta", "fruta", "brownie", "flan", "tiramisu", "chee
 
 #Generar items comida
 variableComida = []
+cuadrosComida = []
+textoComida = []
 contador = 0
 for comida in listaComidas:
+
+    #Crear checkbutton
     variableComida.append("")
     variableComida[contador] = IntVar()
-    comida = Checkbutton(panelComida, text = comida.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variableComida[contador])
-    comida.grid(row=contador, column=0, sticky=W)
+    comida = Checkbutton(panelComida,
+                         text = comida.title(),
+                         font=("Dosis", 16, "bold"),
+                         onvalue=1,
+                         offvalue=0,
+                         variable=variableComida[contador])
+    comida.grid(row=contador,
+                column=0,
+                sticky=W)
+    
+    #Crear cuadro de entrada
+    cuadrosComida.append("")
+    textoComida.append("")
+    cuadrosComida[contador] = Entry(panelComida,
+                                    font=("Dosis", 16, "bold"),
+                                    bd=1,
+                                    width=6,
+                                    state=DISABLED,
+                                    textvariable=textoComida[contador])
+    cuadrosComida[contador].grid(row=contador,
+                                 column=1)
+
     contador += 1
 
 #Generar items bebidas
 variableBebida = []
+cuadrosBebida = []
+textoBebida = []
 contador = 0
 for bebidas in listaBebidas:
+
+    #Crear checkbutton
     variableBebida.append("")
     variableBebida[contador] = IntVar()
-    bebidas = Checkbutton(panelComida, text = bebidas.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variableBebida[contador])
-    bebidas.grid(row=contador, column=1, sticky=W)
+    bebidas = Checkbutton(panelBebidas,
+                          text = bebidas.title(),
+                          font=("Dosis", 16, "bold"),
+                          onvalue=1,
+                          offvalue=0,
+                          variable=variableBebida[contador])
+    bebidas.grid(row=contador,
+                 column=0,
+                 sticky=W)
+    
+    #Crear cuadro de entrada
+    cuadrosBebida.append("")
+    textoBebida.append("")
+    cuadrosBebida[contador] = Entry(panelBebidas,
+                                    font=("Dosis", 16, "bold"),
+                                    bd=1,
+                                    width=6,
+                                    state=DISABLED,
+                                    textvariable=textoBebida[contador])
+    cuadrosBebida[contador].grid(row=contador,
+                                 column=1)
+
     contador += 1
 
 #Generar items postres
 variablePostres = []
+cuadrosPostres = []
+textoPostres = []
 contador = 0
 for postres in listaBebidas:
+
+    #Crear checkbutton
     variablePostres.append("")
     variablePostres[contador] = IntVar()
-    postres = Checkbutton(panelComida, text = postres.title(), font=("Dosis", 16, "bold"), onvalue=1, offvalue=0, variable=variablePostres[contador])
-    postres.grid(row=contador, column=2, sticky=W)
+    postres = Checkbutton(panelPostres,
+                          text = postres.title(),
+                          font=("Dosis", 16, "bold"),
+                          onvalue=1,
+                          offvalue=0,
+                          variable=variablePostres[contador])
+    postres.grid(row=contador,
+                 column=0,
+                 sticky=W)
+    
+    #Crear cuadro de entrada
+    cuadrosPostres.append("")
+    textoPostres.append("")
+    cuadrosPostres[contador] = Entry(panelPostres,
+                                    font=("Dosis", 16, "bold"),
+                                    bd=1,
+                                    width=6,
+                                    state=DISABLED,
+                                    textvariable=textoPostres[contador])
+    cuadrosPostres[contador].grid(row=contador,
+                                 column=1)
+
     contador += 1
 
 
