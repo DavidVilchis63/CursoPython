@@ -32,7 +32,7 @@ panelIzquierdo = Frame(aplicacion, bd=1, relief=FLAT)
 panelIzquierdo.pack(side=LEFT)
 
 #Panel costos
-panelCostos = Frame(panelIzquierdo, bd=1, relief=FLAT)
+panelCostos = Frame(panelIzquierdo, bd=1, relief=FLAT, bg="azure4")
 panelCostos.pack(side=BOTTOM)
 
 #Panel comida
@@ -145,7 +145,7 @@ variablePostres = []
 cuadrosPostres = []
 textoPostres = []
 contador = 0
-for postres in listaBebidas:
+for postres in listaPostres:
 
     #Crear checkbutton
     variablePostres.append("")
@@ -176,6 +176,105 @@ for postres in listaBebidas:
 
     contador += 1
 
+#Variables
+varCostoComida = StringVar()
+varCostoBebida = StringVar()
+varCostoPostre = StringVar()
+varSubtotal = StringVar()
+varImpuesto = StringVar()
+varTotal = StringVar()
+
+#Etiquetas de costo y campos de entrada
+
+etiquetaCostoComida = Label(panelCostos,
+                            text="Costo comida",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaCostoComida.grid(row=0, column=0)
+
+textoCostoComida = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varCostoComida)
+textoCostoComida.grid(row=0, column=1, padx=40)    
+
+etiquetaCostoBebida = Label(panelCostos,
+                            text="Costo bebida",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaCostoBebida.grid(row=1, column=0)
+
+textoCostoBebida = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varCostoBebida)
+textoCostoBebida.grid(row=1, column=1, padx=40)    
+
+etiquetaCostoPostre = Label(panelCostos,
+                            text="Costo postre",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaCostoPostre.grid(row=2, column=0)
+
+textoCostoPostre = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varCostoPostre)
+textoCostoPostre.grid(row=2, column=1)    
+
+etiquetaSubtotal = Label(panelCostos,
+                            text="Subtotal",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaSubtotal.grid(row=0, column=2, padx=40)
+
+textoSubtotal = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varSubtotal)
+textoSubtotal.grid(row=0, column=3, padx=40)    
+
+etiquetaImpuesto = Label(panelCostos,
+                            text="Impuesto",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaImpuesto.grid(row=1, column=2)
+
+textoImpuesto = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varImpuesto)
+textoImpuesto.grid(row=1, column=3)    
+
+etiquetaTotal = Label(panelCostos,
+                            text="Total",
+                            font=("Dosis", 12, "bold"),
+                            bg="azure4",
+                            fg="white")
+etiquetaTotal.grid(row=2, column=2)
+
+textoTotal = Entry(panelCostos,
+                        font=("Dosis", 12, "bold"),
+                        bd=1,
+                        width=10,
+                        state="readonly",
+                        textvariable=varTotal)
+textoTotal.grid(row=2, column=3, padx=40)    
 
 #Mantener ventana activa
 aplicacion.mainloop()
