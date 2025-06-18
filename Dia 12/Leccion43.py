@@ -276,5 +276,33 @@ textoTotal = Entry(panelCostos,
                         textvariable=varTotal)
 textoTotal.grid(row=2, column=3, padx=40)    
 
+#Botones
+botones = ["total", "recibo", "guardar", "resetear"]
+columnas = 0
+
+for boton in botones:
+    boton = Button(panelBotones,
+                   text=boton.title(),
+                   font=("Dosis", 12, "bold"),
+                   fg="white",
+                   bg="azure4",
+                   bd=1,
+                   width=9)
+    
+    boton.grid(row=0,
+               column=columnas)
+    columnas +=1
+
+#Panel de recibo
+textoRecibo = Text(panelRecibo,
+                   font=("Dosis", 12, "bold"),
+                   bd=1,
+                   width=42,
+                   height=10)
+
+textoRecibo.grid(row=0,
+                 column=0)
+
+
 #Mantener ventana activa
 aplicacion.mainloop()
